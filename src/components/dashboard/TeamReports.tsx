@@ -1,8 +1,8 @@
+
 import { DashboardCard } from "./DashboardCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TeamMetricsSection } from "./TeamMetricsSection";
 import { TeamMembersTable } from "./TeamMembersTable";
-import { Users, Calendar, BarChart2 } from "lucide-react";
 
 // Mock data
 const teams = [
@@ -37,7 +37,7 @@ const teamMembers = [
     avatar: "/placeholder.svg",
     initials: "SC",
     projects: ["Cloud Migration", "API Gateway"],
-    availability: "Full",
+    availability: "Full" as const,
   },
   {
     id: "2",
@@ -46,7 +46,7 @@ const teamMembers = [
     avatar: "/placeholder.svg",
     initials: "MJ",
     projects: ["Mobile Auth", "Dashboard UI"],
-    availability: "Partial",
+    availability: "Partial" as const,
   },
   {
     id: "3",
@@ -55,7 +55,7 @@ const teamMembers = [
     avatar: "/placeholder.svg",
     initials: "ED",
     projects: ["User Management", "Analytics"],
-    availability: "Full",
+    availability: "Full" as const,
   },
 ];
 
