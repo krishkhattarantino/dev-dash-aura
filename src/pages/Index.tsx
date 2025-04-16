@@ -1,14 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import { Layout } from "@/components/layout/Layout";
+import { MetricsCards } from "@/components/dashboard/MetricsCards";
+import { TeamOverview } from "@/components/dashboard/TeamOverview";
+import { DeveloperActivity } from "@/components/dashboard/DeveloperActivity";
+import { ProjectAssignments } from "@/components/dashboard/ProjectAssignments";
+import { TimesheetSummary } from "@/components/dashboard/TimesheetSummary";
+import { SkillInsights } from "@/components/dashboard/SkillInsights";
+import { TeamReports } from "@/components/dashboard/TeamReports";
+
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <Layout>
+      <div className="space-y-6">
+        {/* Top Metrics Cards */}
+        <MetricsCards />
+        
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <TeamOverview />
+          <DeveloperActivity />
+        </div>
+        
+        {/* Full Width Components */}
+        <ProjectAssignments />
+        
+        {/* Two Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <TimesheetSummary />
+          <SkillInsights />
+        </div>
+        
+        {/* Team Reports (Full Width) */}
+        <TeamReports />
       </div>
-    </div>
+    </Layout>
   );
-};
-
-export default Index;
+}
